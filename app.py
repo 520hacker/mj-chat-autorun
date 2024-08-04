@@ -105,7 +105,7 @@ def getImage(content):
 
     # 优化后的正则表达式匹配所有 markdown 中的标准图片格式的地址
     image_urls = re.findall(
-        r"!\[.*?\]\((https?://\S+?\.(?:png|jpg|jpeg|gif|bmp|tiff))\)", content
+        r"!\[.*?\]\((https?://\S+?\.(?:png|jpg|jpeg|gif|bmp|tiff|webp))\)", content
     )
 
     if not image_urls:
@@ -191,7 +191,7 @@ def process_images_in_directory(directory, output_dir):
     for root, _, files in os.walk(directory):
         for file in files:
             if file.lower().endswith(
-                (".png", ".jpg", ".jpeg", ".bmp", ".gif", ".tiff")
+                (".png", ".jpg", ".jpeg", ".bmp", ".gif", ".tiff", ".webp")
             ):
                 image_path = os.path.join(root, file)
                 split_image(image_path, output_dir)
