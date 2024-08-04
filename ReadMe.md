@@ -17,9 +17,12 @@
 在根目录创建文件 .env
 ```env
 API_KEY={your key}
-API_HOST=https://www.gptgod.site
+API_HOST=https://api.gptgod.online
 MIDJOURNEY_MODEL=mj-chat
 ```
+
+如果您使用的是dalle-3 模型，在 gptgod 中，它的自定义名称是  gpt-4-dalle
+如果您使用的是midjourney 模型， 在 gptgod 中，它的自定义 mj-chat
 
 ## 安装依赖
 
