@@ -1,10 +1,1 @@
-pip install json
-pip install time
-pip install requests
-pip install logging
-pip install sseclient
-pip install re
-pip install os
-pip install datetime
-pip install python-dotenv
-pip install pillow
+pip install requests sseclient-py python-dotenv pillow 

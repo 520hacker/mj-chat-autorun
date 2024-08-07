@@ -29,8 +29,9 @@ MIDJOURNEY_MODEL=mj-chat
 在项目目录下，执行以下命令以安装所需的依赖：
 
 ```bash
-install.bat
+pip install requests sseclient-py python-dotenv pillow 
 ```
+ 
 
 ## 使用方法
 
