@@ -81,11 +81,13 @@ def send_request(prompt):
                     print(json.dumps(data, indent=2))
             except json.JSONDecodeError:
                 print(f"无法解析JSON: {event.data}")
+                logging.info(event.data)
 
         print()  # 打印一个换行
 
         log_message = f"'{prompt}' 的绘画线程已结束。"
 
+        logging.info(result)
         getImage(result)
 
         print(log_message)
@@ -110,6 +112,7 @@ def getImage(content):
 
     if not image_urls:
         print("No image URLs found in the content.")
+        logging.info("No image URLs found in the content.")
         return
 
     # 对提取到的每个URL进行下载
@@ -127,12 +130,15 @@ def getImage(content):
                 with open(file_path, "wb") as f:
                     f.write(response.content)
                 print(f"Downloaded: {image_url} -> {file_path}")
+                logging.info(f"Downloaded: {image_url} -> {file_path}")
             else:
                 print(
                     f"Failed to download: {image_url}, status code: {response.status_code}"
                 )
+                logging.info(f"Failed to download: {image_url}, status code: {response.status_code}")
         except Exception as e:
             print(f"Error occurred while downloading {image_url}: {e}")
+            logging.info(f"Error occurred while downloading {image_url}: {e}")
 
 
 def main():
@@ -148,6 +154,7 @@ def main():
             error_message = f"请求发生错误: {e}"
 
     print("画图任务都完成了！开始切图")
+    logging.info("画图任务都完成了！开始切图")
 
     current_directory = os.getcwd()
     download_directory = os.path.join(current_directory, "downloads")
@@ -155,6 +162,7 @@ def main():
     process_images_in_directory(download_directory, output_directory)
 
     print("所有的任务都完成了！")
+    logging.info("所有的任务都完成了！")
 
 
 def split_image(image_path, output_dir):
