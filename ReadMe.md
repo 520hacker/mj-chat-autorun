@@ -31,7 +31,7 @@ MIDJOURNEY_MODEL=mj-chat
 ```bash
 pip install requests sseclient-py python-dotenv pillow 
 ```
- 
+
 
 ## 使用方法
 
@@ -49,6 +49,14 @@ pip install requests sseclient-py python-dotenv pillow
 ```bash
 python app.py
 ```
+
+针对 midjourney 会生成4张图片拼合在一起的情况，这里提供一个单独的功能，用于把downloads目录中的大图直接切成4张小图，存放到 output 文件夹。
+
+```
+pyton split.py
+```
+
+
 
 ## 贡献
 
