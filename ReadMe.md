@@ -10,7 +10,15 @@
 
 ## 支持的站点
 
-本项目支持 Twoapi 和 [gptgod.site](https://gptgod.site) 等站点（默认模型为: mj-chat），同时也支持其他能够将 Midjourney 请求转换为一次性 SSE 对话的 API 站点。
+本项目支持 Twoapi 和 [gptgod.online](https://gptgod.online/#/register?invite_code=ddw3yl4ve3ofueqz2jwwnpeyp) 等站点（默认模型为: mj-chat），同时也支持其他能够将 Midjourney 请求转换为一次性 SSE 对话的 API 站点。
+
+使用本人传销链接注册，可以寻找本人提供有限技术支持 :D
+
+```
+https://gptgod.online/#/register?invite_code=ddw3yl4ve3ofueqz2jwwnpeyp
+```
+
+
 
 ## 完成配置
 
