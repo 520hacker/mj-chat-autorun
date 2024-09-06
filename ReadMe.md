@@ -65,6 +65,47 @@ python split.py
 ```
 
 
+## WIN下零基础安装 
+使用 PowerShell, 管理员权限，允许Script
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
+
+安装 pyenv-win
+```bash
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+```
+
+安装Git
+```bash
+https://github.com/git-for-windows/git/releases/download/v2.46.0.windows.1/Git-2.46.0-64-bit.exe
+```
+
+获取本项目代码
+```bash
+git clone https://github.com/520hacker/mj-chat-autorun.git mj
+cd mj
+```
+
+安装python
+```bash
+pyenv install  3.12.0
+pyenv global 3.12.0
+```
+
+安装依赖
+```bash
+.\install.bat
+```
+
+请自行设置 .env 文件（格式参看 .env.example ）
+
+
+开始运行项目
+```bash
+.\run.bat
+```
+
 
 ## 贡献
 
