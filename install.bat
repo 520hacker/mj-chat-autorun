@@ -1,1 +1,1 @@
-pip install requests sseclient-py python-dotenv pillow 
+pip install requests sseclient-py python-dotenv pillow openpyxl
