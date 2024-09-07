@@ -113,6 +113,13 @@ pyenv global 3.12.0
 ```
 
 
+
+## 纯文字对话
+
+- 请更新 text-data.xlsx  ， text-prompts.json 会依据 xlsx 进行生成， 结果会输出到 output 目录。
+- install.bat 
+- text-run.bat 启动程序
+
 ## 贡献
 
 欢迎对本项目提出建议或贡献代码！如有任何问题或建议，请在 GitHub 上提交 issue。
