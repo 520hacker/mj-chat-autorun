@@ -202,7 +202,13 @@ pyenv global 3.12.0
    python --version
    ```
 
-### 步骤 4：安装 Python 依赖项
+### 步骤 4：安装 Python 依赖项并运行
+
+0. 获取本项目代码
+- PowerShell 下执行，注意你最好先cd到你的执行目录再执行这个，否则会在当前目录创建mj文件夹并保存文件。
+   ```bash
+   git clone https://github.com/520hacker/mj-chat-autorun.git mj
+   ```
 
 1. **进入项目文件夹**：
 
