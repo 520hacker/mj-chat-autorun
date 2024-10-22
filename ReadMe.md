@@ -12,7 +12,7 @@
 
 本项目支持 Twoapi 和 [gptgod.online](https://gptgod.online/#/register?invite_code=ddw3yl4ve3ofueqz2jwwnpeyp) 等站点（默认模型为: mj-chat），同时也支持其他能够将 Midjourney 请求转换为一次性 SSE 对话的 API 站点。
 
-使用本人传销链接注册，可以寻找本人提供有限技术支持 :D
+使用本人链接注册，可以寻找本人提供有限技术支持 :D
 
 ```
 https://gptgod.online/#/register?invite_code=ddw3yl4ve3ofueqz2jwwnpeyp
@@ -112,7 +112,124 @@ pyenv global 3.12.0
 .\run.bat
 ```
 
+## 在 macOS 上使用 MJ-CHAT-AUTORUN
 
+为了在 macOS 上管理多个 Python 版本，你可以使用 `pyenv`，这是一款流行的工具。以下是如何在你的 Mac 上安装和设置 `pyenv` 的步骤：
+
+### 步骤 1：安装依赖项
+
+在安装 `pyenv` 之前，你需要安装一些依赖项。可以通过终端完成此操作：
+
+1. **打开终端**。
+
+2. **安装命令行工具**：如果你还没有安装 Xcode 命令行工具，请运行：
+
+   ```bash
+   xcode-select --install
+   ```
+
+3. **安装 Homebrew**：如果你还没有安装 Homebrew，可以通过运行以下命令进行安装：
+
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+4. **安装所需软件包**：使用 Homebrew 安装所需的软件包：
+
+   ```bash
+   brew install openssl readline sqlite3 xz zlib
+   ```
+
+5. **验证安装**：安装完成后，可以通过运行以下命令验证 Git 是否已安装：
+
+   ```bash
+   git --version
+   ```
+
+### 步骤 2：安装 pyenv
+
+1. **安装 pyenv**：你可以使用 Homebrew 安装 `pyenv`：
+
+   ```bash
+   brew install pyenv
+   ```
+
+2. **将 pyenv 添加到你的 shell**：你需要将 `pyenv` 添加到你的 shell 启动文件。根据你使用的 shell，可能需要编辑以下文件之一：
+
+   - 对于 **bash**（`~/.bash_profile` 或 `~/.bashrc`）：
+
+     ```bash
+     echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bash_profile
+     echo 'eval "$(pyenv init --path)"' >> ~/.bash_profile
+     echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
+     ```
+
+3. **应用更改**：编辑完文件后，通过重启终端或运行以下命令来应用更改：
+
+   ```bash
+   source ~/.bash_profile
+   ```
+
+### 步骤 3：安装 Python 版本
+
+1. **列出可用的 Python 版本**：你可以通过运行以下命令查看可安装的 Python 版本：
+
+   ```bash
+   pyenv install --list
+   ```
+
+2. **安装特定的 Python 版本**：要安装特定版本，请使用：
+
+   ```bash
+   pyenv install <version>
+   ```
+
+   例如，要安装 Python 3.12.0：
+
+   ```bash
+   pyenv install 3.12.0
+   ```
+
+3. **设置全局 Python 版本**：安装完成后，可以设置全局 Python 版本：
+
+   ```bash
+   pyenv global 3.12.0
+   ```
+
+4. **验证安装**：检查当前使用的 Python 版本是否正确：
+
+   ```bash
+   python --version
+   ```
+
+### 步骤 4：安装 Python 依赖项
+
+1. **进入项目文件夹**：
+
+   ```bash
+   cd mj
+   ```
+
+2. **运行安装命令**：
+
+   ```bash
+   pip install requests sseclient-py python-dotenv pillow openpyxl
+   ```
+
+3. **创建 .env 文件，并将配置放入其中**：
+
+   ```ini
+   API_KEY={你的密钥}
+   API_HOST=https://api.gptgod.online
+   MIDJOURNEY_MODEL=flux
+   MODEL=gpt-4o-mini
+   ```
+
+4. **测试应用**：
+
+   ```bash
+   python app.py
+   ```
 
 ## 纯文字对话
 
