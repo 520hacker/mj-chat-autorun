@@ -185,8 +185,11 @@ pyenv global 3.12.0
    ```
 
    例如，要安装 Python 3.12.0：
-
+   
    ```bash
+   # 网不好的可以先下镜像
+   wget  https://registry.npmmirror.com/-/binary/python/3.12.0/Python-3.12.0.tar.xz -P ~/.pyenv/cache/
+   
    pyenv install 3.12.0
    ```
 
