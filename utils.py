@@ -20,10 +20,22 @@ def getImage(content):
 
     # image_urls = re.findall(
     #     r"!\[.*?\]\((https?://\S+?\.(?:png|jpg|jpeg|gif|bmp|tiff|webp))\)", content
-    # ) 
+    # )
+
+    # 正则表达式匹配Markdown格式的图片链接
     image_urls = re.findall(
-        r"!\[.*?\]\((https?://[^\s]+(?:\.(?:png|jpg|jpeg|gif|bmp|tiff|webp))?)\)", content
+        r"!\[.*?\]\((https?://[^\s]+(?:\.(?:png|jpg|jpeg|gif|bmp|tiff|webp))?)\)",
+        content,
     )
+
+    # 检查是否直接以URL开头
+    if content.startswith("https://") and re.fullmatch(
+        r"https?://[^\s]+(?:\.(?:png|jpg|jpeg|gif|bmp|tiff|webp))?", content.strip()
+    ):
+        image_urls.append(content)
+
+    # 打印结果
+    print(image_urls)
 
     if not image_urls:
         print("No image URLs found in the content.")
@@ -48,7 +60,7 @@ def getImage(content):
             }
             print(image_url)
 
-            response = requests.get(image_url[1], headers=headers)
+            response = requests.get(image_url[1], headers=headers, verify=False)
             # response = requests.get(image_url)
             # print(response.content)
             # print(response.text)
